@@ -18,8 +18,9 @@ let PersonC = class {
 let bob = new PersonC( 'Bob', 123 );
 bob.getDetails();
 
-//
 
+
+// extends
 let EmployeeC = class extends PersonC {
     constructor( name, id, salary ) {
         super( name, id );

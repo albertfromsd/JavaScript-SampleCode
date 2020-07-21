@@ -1,4 +1,4 @@
-function Person( firstName, lastName ) {
+function PersonF( firstName, lastName ) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.greet = () => {
@@ -7,16 +7,32 @@ function Person( firstName, lastName ) {
     }
 }
 
-Person.prototype.getFullName = function() {
+PersonF.prototype.getFullName = function() {
     console.log( this.firstName + ' ' + this.lastName );
     return this.firstName + ' ' + this.lastName;
 }
 
-let john = new Person( 'John', 'Doe' );
+let john = new PersonF( 'John', 'Doe' );
 // console.log( john );
 
 john.greet();
 
+
+// extends
+let EmployeeF = function( firstName, lastName, id, salary ) {
+    PersonF.call( this, firstName, lastName, id ); // first argument is always this
+    this.id = id;
+    this.salary = salary; // adding a third variable to this
+}
+// mimicking extends
+Object.setPrototypeOf( EmployeeF, PersonF.prototype ) // two arguments, what is the object and prototype
+EmployeeF.prototype.getEmployeeInfo = function() {
+    console.log( `${this.firstName} ${this.lastName}: ${this.id}: ${this.salary}` );
+    return `${this.firstName} ${this.lastName}: ${this.id}: ${this.salary}`;
+}
+let albert = new EmployeeF( 'Albert', 'Ahn', 11, 250000 );
+console.log( albert );
+albert.getEmployeeInfo();
 
 
 ///////////////////////////////////////////////////////////////////////
