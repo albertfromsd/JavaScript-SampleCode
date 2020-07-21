@@ -1,0 +1,8 @@
+General Notes: 'this'
+
+[ this-basic-example.js ]
+ - Whenever you create a function in the global context, 'this' will refer to the global window object
+ - For methods defined inside an object, 'this' now refers to that object
+ - A workaround for changing 'this' values inside an object/function is to assign a variable to store the reference to 'this'
+   - e.g. let self = this;
+   - By default, even if nested inside another function where 'this' refers to the object, any further nested references to 'this' will revert back to global window object by reference
