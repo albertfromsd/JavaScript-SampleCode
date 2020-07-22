@@ -6,10 +6,11 @@ function a() {
 }
 
 a(); // 'this' refers to the global window object
+//////////////////////////////////////////////////////////////////////////
 
 
 //////////////////////////////////////////////////////////////////////////
-// a little deeper example with object that has a method inside
+// a little deeper example with object that has a method inside another method
 let c = {
     name: 'c object',
     log: function() {
@@ -26,3 +27,4 @@ let c = {
 }
 
 c.log(); // 'this' becomes the object the method is sitting inside of
+//////////////////////////////////////////////////////////////////////////

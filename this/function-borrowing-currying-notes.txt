@@ -1,0 +1,48 @@
+General Notes: Function borrowing and currying
+
+*************************************************
+    [ FUNCTION BORROWING ]
+*************************************************
+
+ - borrowing a method from another object to use on a new object with call/apply
+ - useful when original object has a method referring to 'this'
+ - e.g:
+    ogObject.nameOfMethod.apply( newObject )
+    - will result with the newObject calling the method of ogObject and changes references to 'this to the newObject
+
+*************************************************
+
+
+
+*************************************************
+    [ FUNCTION CURRYING ]
+*************************************************
+
+ - uses bind to permanently set a value of one of the arguments of the original Function
+ - generally useful for mathematical operations
+ - eg:
+    -------------------------------------------------
+    function multiply(a, b) {
+        return a * b;
+    };
+
+    let multiplyByTwo = multiply.bind( this, 2 );
+    -------------------------------------------------
+
+    - TRANSLATION: 'this' is the first argument, and it will always be 2
+    - now you can call multiplyByTwo( num );
+    - it will always multiply by 2 bc of the function currying performed earlier
+
+ - eg2:
+    -------------------------------------------------
+    function multiply(a, b) {
+        return a * b;
+    };
+
+    let multiplyTwoByTwo = multiply.bind( this, 2, 2 );
+    -------------------------------------------------
+
+    - TRANSLATION: now both paramenters will always be set to 2
+    - arguments input into multiplyTwoByTwo will have no effect
+
+*************************************************
