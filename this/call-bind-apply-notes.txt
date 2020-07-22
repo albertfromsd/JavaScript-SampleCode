@@ -1,0 +1,53 @@
+General Notes: call(), apply(), bind()
+
+*************************************************
+    [ BIND ]
+*************************************************
+
+ *bind( target )
+ - bind is a method on all function
+ - it takes in one argument that tells JS what 'this' should refer to
+   - e.g. logName.bind( johnDoe )
+ - returns a new copy of the function with a new binded reference to 'this' via the input argument
+ - not immediately invoked
+
+*************************************************
+
+
+*************************************************
+   [ CALL ]
+*************************************************
+
+ *call( target, arg1, arg2, etc )
+ - call immediately invokes the function
+ - first argument is the target that 'this' will refer to
+ - following arguments are whatever parameters the original function requires
+
+*************************************************
+
+
+*************************************************
+   [ APPLY ]
+*************************************************
+
+ *apply( target, [arg1, arg2, etc] )
+ - immediately invoked similar to call
+ - main difference is that the arguments must be put into an array
+
+*************************************************
+
+
+*************************************************
+    [ IIFE w call/apply ]
+*************************************************
+
+ - can make IIFE like normal by surrounding in ( function() )
+ - instead of following with () to invoke, you can use call/apply
+ - e.g: (arguments is a keyword in JS that lists all the input arguments)
+  -------------------------------------------------
+    ( function( arg1, arg2 ) {
+        console.log( "Arguments: " + arguments )
+    }).apply( nameOfTarget, [arg1, arg2] )
+  -------------------------------------------------
+
+*************************************************

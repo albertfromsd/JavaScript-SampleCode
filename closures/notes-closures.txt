@@ -1,0 +1,10 @@
+General Notes: Closures
+
+*************************************************
+    [ CLOSURES ]
+*************************************************
+
+ - closures are a combination of functions bundled within in each other
+ - maintains references to its outer lexical environment
+ - closures give inner functions access to an outer functions variables
+ - closures are created everytime a funciton is created
