@@ -43,7 +43,7 @@ function cLog2() {
                 return function() {
                     console.log( j )
                 }
-            }(i) ));
+            }(i) )); // IIFE
     }
 
     return arr;

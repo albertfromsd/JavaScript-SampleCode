@@ -8,3 +8,6 @@ General Notes: Closures
  - maintains references to its outer lexical environment
  - closures give inner functions access to an outer functions variables
  - closures are created everytime a funciton is created
+ 
+ *************************************************
+ *************************************************
