@@ -1,0 +1,4 @@
+General Notes: Function Overloading
+
+ - JavaScript does not have innate support for function overloading
+ - Because in JS, functions are objects

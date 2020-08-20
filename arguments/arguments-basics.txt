@@ -1,0 +1,15 @@
+General Notes: 'arguments'
+
+
+*************************************************
+    [ ARGUMENTS ]
+*************************************************
+
+ - 'arguments' is a keyword in JS that lists all the input arguments in a function
+ - returns an array-like object, which looks like an array, but does not have 
+ some of the built-in methods/properties of a normal array
+ - can be used to ensure accurate argument inputs
+ - *[2020]* will soon be deprecated
+
+ *************************************************
+ *************************************************
