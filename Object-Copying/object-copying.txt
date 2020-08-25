@@ -26,7 +26,10 @@
  - But will fail for any object or array that has nested references to other objects or arrays.
 
 [ Methods to make a deep copy ]:
- - lodash library has _.clone(nameOfObject)
+ - lodash library:
+   import { clone, cloneDeep } from 'lodash'
+   _.clone(nameOfObject)
+
  - create a recursive function to check for object type
    - remember to check for 'null' when checking for objects, bc null is an object
  - JSON.parse( JSON.stringify(nameOfObject) 
