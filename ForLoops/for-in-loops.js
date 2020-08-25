@@ -32,13 +32,15 @@ const forInLoopDanger = array => {
 
 // why not to use for-in over arrays
 let myArr2 = [1, 2, 3, 4];
-myArr2.test = () => console.log( 'myArr2.test method' );
+myArr2.test = () => console.log( 'Logging: myArr2.test method' );
 
 const forInLoopDanger2 = array => {
    for( const index in array ) {
       let temp = array[index];
       // index iteration will go over custom added methods/members
       console.log( `${index}: ${temp}` );
+
+      if( array[index] instanceof Function ) array[index]();
    };
 };
 forInLoopDanger2( myArr2 );
