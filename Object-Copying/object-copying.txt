@@ -1,0 +1,36 @@
+[ SHALLOW COPYING ]
+
+ - A shallow copy refers to the fact that only one level is copied, and that will work fine for an array or object containing only primitive values.
+
+ - Making a shallow copy of an array or object means creating new references to the primitive values inside the object, copying them.
+
+ - That means that changes to the original array will not affect the copied array, which is what would happen if only the reference to the array had been copied (such as would occur with the assignment operator '=')
+
+***
+ - For objects and arrays containing other objects or arrays, copying these objects requires a deep copy. 
+ - Otherwise, changes made to the nested references will change the data nested in the original object or array.
+
+[ Methods to make a shallow copy ]
+ - spread operator ( const copy = { ...nameOfObject } )
+ - Array.slice()
+ - Object.assign( target, source )
+   - must initialize/set the target before calling .assign()
+***
+
+
+[ DEEP COPYING ]
+
+ - For objects and arrays containing other objects or arrays, copying these objects requires a deep copy. 
+ - Otherwise, changes made to the nested references will change the data nested in the original object or array.
+ - This is compared to a shallow copy, which works fine for an object or array containing only primitive values
+ - But will fail for any object or array that has nested references to other objects or arrays.
+
+[ Methods to make a deep copy ]:
+ - lodash library:
+   import { clone, cloneDeep } from 'lodash'
+   _.clone(nameOfObject)
+
+ - create a recursive function to check for object type
+   - remember to check for 'null' when checking for objects, bc null is an object
+ - JSON.parse( JSON.stringify(nameOfObject) 
+   - Suitable if you do not use Dates, functions, undefined, Infinity, [NaN], RegExps, Maps, Sets, Blobs, FileLists, ImageDatas, sparse Arrays, Typed Arrays or other complex types within your object
